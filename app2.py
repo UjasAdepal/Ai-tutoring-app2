@@ -13,7 +13,7 @@ from transformers.utils.import_utils import is_torch_tpu_available
 load_dotenv()
 
 # Get the OpenAI API key from the environment variables
-openai_api_key = os.environ.get("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")
+# openai_api_key = os.environ.get("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")
 
 # Load the SentenceTransformer model
 embedding_model = SentenceTransformer('all-mpnet-base-v2')
@@ -45,7 +45,8 @@ def semantic_search(query, embeddings, questions, answers, top_k=3):
     return results
 
 # Setup the LLMChain and prompts
-llm = ChatOpenAI(temperature=0, model="gpt-3.5", openai_api_key="your_actual_api_key")
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo", openai_api_key="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")
+
 
 template = """
 You are a world class business development representative. 
